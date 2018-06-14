@@ -1,0 +1,2 @@
+className = com.example.test.clazztest.Student
+methodName = show
