@@ -8,10 +8,5 @@ package com.example.test.test1;
  * I am a Code Man -_-!
  */
 public class Test3 {
-    public static void main(String[] args) {
-        int p;
-        if((p=1)==1){
-            System.out.println(p);
-        }
-    }
+
 }
