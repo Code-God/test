@@ -20,9 +20,7 @@ public class Server implements Runnable {
     public void run() {
         try {
             while (!Thread.interrupted()) {
-//                System.out.println("等待客户端请求");
                 this.handler.waitRequest();//第一步
-//                System.out.println("处理客户端请求");
                 TimeUnit.SECONDS.sleep(1);
                 this.handler.receiveRequest();//第四步
             }

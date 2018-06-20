@@ -20,10 +20,8 @@ public class Client implements Runnable {
     public void run() {
         try {
             while (!Thread.interrupted()) {
-//                System.out.println("客户端发送请求");
                 TimeUnit.SECONDS.sleep(1);
                 this.handler.sendRequest();//第二步
-//                System.out.println("等待服务端的响应");
                 this.handler.waitResponse();//第三步
             }
         } catch (InterruptedException e) {
