@@ -1,5 +1,8 @@
 package com.example.test.test1;
 
+
+import java.io.PrintStream;
+
 /**
  * @Author: wuxiaobiao
  * @Description:
@@ -9,9 +12,37 @@ package com.example.test.test1;
  */
 public class Test3 {
 
-    public static void main(String[] args) {
-        int a = Integer.parseInt("0");
-        System.out.println(a);
+    public static void main(String[] args){
+        int a = 1;
+        int b = 2;
+        display(a,b);
+        System.out.println("a=" + a);
+        System.out.println("b=" + b);
+        //a=10
+        //b=20
+    }
+
+    public static void display(int a, int b){
+//        a = 10;
+//        b = 20;
+//        System.out.println("a=" + a);
+//        System.out.println("b=" + b);
+//        System.exit(0); //让虚拟机退出
+
+        PrintStream ps = new PrintStream(System.out) {
+            @Override
+            public void println(String x){
+                if(x!=null) {
+                    if(x.startsWith("a")) {
+                        super.println("a=20");
+                    }else if(x.startsWith("b")) {
+                        super.println("b=20");
+                    }
+                }else {
+                    throw new NullPointerException();
+                }
+            }
+        };
     }
 
 }
